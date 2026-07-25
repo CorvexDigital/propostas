@@ -203,7 +203,17 @@
   }
 
   @media (max-width:760px){
-    .hero-media{display:none}
+    .hero{display:flex;flex-direction:column}
+    .hero .wrap{order:1;padding-bottom:26px}
+    .hero-media{order:2;position:relative;inset:auto;width:auto;height:auto;
+      aspect-ratio:3/2;margin:0 24px 30px;border-radius:16px}
+    .hero-media>img,.hero-media>video{position:absolute;inset:0;width:100%;height:100%;
+      object-fit:cover;object-position:center;
+      -webkit-mask-image:none;mask-image:none}
+    .hero-media::after{background:linear-gradient(180deg, rgba(var(--hero-rgb),.10), rgba(var(--hero-rgb),.04))}
+    /* separador solto no fim da linha quando a data quebra */
+    .meta .sep{display:none}
+    .meta{gap:6px 18px}
   }
 
   @media (max-width:560px){
